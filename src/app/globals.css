@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #0f0f1a;
+  --bg-secondary: #1a1a2e;
+  --bg-tertiary: #242440;
+  --text-primary: #e8e8f0;
+  --text-secondary: #9999b3;
+  --text-muted: #70708f;
+  --border-color: #2a2a3d;
+  --accent-blue: #60a5fa;
+  --accent-purple: #a78bfa;
+  --accent-emerald: #34d399;
+  --accent-amber: #fbbf24;
+  --accent-rose: #fb7185;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Code blocks */
+pre {
+  background: var(--bg-secondary) !important;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem !important;
+  overflow-x: auto;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85em;
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+th {
+  background: var(--bg-tertiary);
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--accent-blue);
+  border-bottom: 2px solid var(--accent-blue);
+  white-space: nowrap;
+}
+
+td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+tr:hover td {
+  background: rgba(96, 165, 250, 0.03);
+}
+
+/* Smooth section transitions */
+section {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Active sidebar link */
+.sidebar-link {
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.sidebar-link.active {
+  border-left-color: var(--accent-blue);
+  background: rgba(96, 165, 250, 0.08);
+  color: var(--accent-blue);
+}
+
+.sidebar-link:hover {
+  background: rgba(96, 165, 250, 0.05);
+  color: var(--text-primary);
+}
+
+/* Table responsiveness */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.table-wrapper table {
+  margin: 0;
+}
+
+.table-wrapper th:first-child,
+.table-wrapper td:first-child {
+  position: sticky;
+  left: 0;
+  background: var(--bg-secondary);
+  z-index: 1;
+}
+
+/* Callout blocks */
+.callout {
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+  border-left: 4px solid;
+}
+
+.callout-insight {
+  background: rgba(96, 165, 250, 0.08);
+  border-left-color: var(--accent-blue);
+}
+
+.callout-recommendation {
+  background: rgba(52, 211, 153, 0.08);
+  border-left-color: var(--accent-emerald);
+}
+
+.callout-warning {
+  background: rgba(251, 191, 36, 0.08);
+  border-left-color: var(--accent-amber);
+}
+
+.callout-key {
+  background: rgba(167, 139, 250, 0.08);
+  border-left-color: var(--accent-purple);
+}
+
+/* Progress bar animation */
+@keyframes fillBar {
+  from { width: 0; }
+  to { width: var(--fill-width); }
+}
+
+.progress-bar-fill {
+  animation: fillBar 1s ease-out forwards;
+}
+
+/* PDF generation overrides */
+.pdf-mode {
+  background: #0f0f1a !important;
+  color: #e8e8f0 !important;
+}
+
+/* Mobile menu overlay */
+.mobile-overlay {
+  backdrop-filter: blur(4px);
+}
+
+@media (max-width: 1024px) {
+  html {
+    scroll-padding-top: 80px;
+  }
+  
+  table {
+    font-size: 0.8rem;
+  }
+  
+  th, td {
+    padding: 0.5rem 0.75rem;
+  }
+}
