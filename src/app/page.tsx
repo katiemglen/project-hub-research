@@ -4,6 +4,8 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import Sidebar from "@/components/Sidebar";
 import HeroSection from "@/components/HeroSection";
 import ExecutiveSummary from "@/components/ExecutiveSummary";
+import ResearchDocumentStandards from "@/components/ResearchDocumentStandards";
+import BuildProcessStandards from "@/components/BuildProcessStandards";
 import ProjectManagementPatterns from "@/components/ProjectManagementPatterns";
 import StepByStepPatterns from "@/components/StepByStepPatterns";
 import ResearchIntegration from "@/components/ResearchIntegration";
@@ -19,6 +21,8 @@ import MobileNav from "@/components/MobileNav";
 
 const sections = [
   { id: "executive-summary", label: "Executive Summary", icon: "📋" },
+  { id: "research-document-standards", label: "Research Document Standards", icon: "📐" },
+  { id: "build-process-standards", label: "Build Process Standards", icon: "🔨" },
   { id: "project-management-patterns", label: "Project Management UI/UX", icon: "🏗️" },
   { id: "step-by-step-patterns", label: "Step-by-Step Tasks", icon: "✅" },
   { id: "research-integration", label: "Research Integration", icon: "🔬" },
@@ -92,6 +96,8 @@ export default function Home() {
           
           <div className="space-y-16 mt-12">
             <ExecutiveSummary />
+            <ResearchDocumentStandards />
+            <BuildProcessStandards />
             <ProjectManagementPatterns />
             <StepByStepPatterns />
             <ResearchIntegration />
